@@ -40,15 +40,6 @@
   display: block;
 }
 
-.brand-image__fallback {
-  display: block;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 4rem;
-  white-space: nowrap;
-}
-
 .navbar-toggle {
   display: none;
   background: transparent;

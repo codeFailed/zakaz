@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoUrl from "../assets/logo_darker.svg";
 
 type HeaderProps = {
   onAction: () => void;
@@ -6,7 +7,6 @@ type HeaderProps = {
 
 export default function Header({ onAction }: HeaderProps) {
   const [open, setOpen] = useState(false);
-  const [logoFailed, setLogoFailed] = useState(false);
 
   return (
     <div className="rr-header minimal landing" role="banner">
@@ -25,16 +25,7 @@ export default function Header({ onAction }: HeaderProps) {
               <span className="icon-bar" />
             </button>
             <a className="navbar-brand brand-image" href="/" onClick={(e) => e.preventDefault()}>
-              {logoFailed ? (
-                <span className="brand-image__fallback">RocketReach</span>
-              ) : (
-                <img
-                  className="brand-image__without-text"
-                  alt="RocketReach"
-                  src="/images/logo_darker.svg"
-                  onError={() => setLogoFailed(true)}
-                />
-              )}
+              <img className="brand-image__without-text" alt="RocketReach" src={logoUrl} />
             </a>
           </div>
 
