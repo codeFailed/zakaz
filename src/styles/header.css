@@ -1,0 +1,150 @@
+.rr-header.landing .navbar-default {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-width: 0;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.rr-header .navbar-default > .container-fluid {
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.rr-header .navbar-default .navbar-brand {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0;
+  display: block;
+  height: auto;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.rr-header .navbar-default .navbar-brand img {
+  width: 4rem;
+  height: 4rem;
+  display: block;
+}
+
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border-width: 0;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  margin-right: 0.5rem;
+  padding: 9px 10px;
+  cursor: pointer;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #fff;
+  transition: all 0.15s;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.nav.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.rr-header .navbar-default .navbar-nav li a:not(.btn) {
+  color: #fff;
+  padding: 2rem 1rem;
+  display: block;
+  transition: background-color 0.25s ease-in-out;
+  transform: translateY(-2px);
+}
+
+.rr-header.landing .navbar-default .navbar-nav > li > a:hover,
+.rr-header.landing .navbar-default .navbar-nav > li > a:focus {
+  background-color: transparent;
+  color: #c4ebfd;
+}
+
+.rr-header .navbar-default .navbar-nav.navbar-right .navbar-btn {
+  margin-left: 1.5rem;
+}
+
+.rr-header .navbar-default .navbar-right .navbar-btn.rr-button.btn-inverse {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-toggle {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 0;
+  }
+
+  .rr-header .navbar-default > .container-fluid {
+    flex-wrap: wrap;
+  }
+
+  .navbar-collapse {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background: #3a589b;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.175);
+  }
+
+  .navbar-collapse.is-open {
+    display: flex;
+  }
+
+  .nav.navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .rr-header .navbar-default .navbar-nav li a:not(.btn) {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .rr-header .navbar-default .navbar-nav.navbar-right .navbar-btn {
+    margin: 1rem 1.5rem 1.5rem;
+    display: block;
+    text-align: center;
+  }
+}

@@ -1,0 +1,428 @@
+.blur-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.rr-content {
+  flex: 1;
+}
+
+.max-width-layout {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .max-width-layout {
+    max-width: 76rem;
+    padding: 3rem;
+  }
+}
+
+.rr-auth-box {
+  font-family: "InterVariable", Arial, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+}
+
+.rr-auth-box .heading {
+  color: #fff;
+  opacity: 0.5;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rr-auth-box .heading .subheading {
+  font-size: 0.8em;
+  color: #fff;
+  display: block;
+  margin: 0;
+  font-weight: normal;
+  padding: 0;
+  margin-top: 0.8rem;
+}
+
+.form-box {
+  position: relative;
+  text-align: left;
+  padding: 3rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  background: #fff;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-box button[type="submit"] {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.form-box button[type="submit"]:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.spin-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.form-box .manual-signup .alt-action,
+.form-box .manual-signup .signup-disclaimer-box {
+  text-align: center;
+  margin-top: 2rem;
+  color: #898989;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.form-box .manual-signup .alt-action a,
+.form-box .manual-signup .signup-disclaimer-box a {
+  font-weight: 500;
+}
+
+.form-box .manual-signup .signup-disclaimer-box p {
+  margin-bottom: 0;
+}
+
+.alt-action {
+  margin-top: 0.4rem;
+}
+
+.oauth-signup {
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+.form-box .oauth-signup .oauth-divider-vertical-or {
+  display: none;
+}
+
+.form-box .oauth-signup .oauth-divider {
+  margin: 3rem 0;
+}
+
+.oauth-divider {
+  margin: 1rem 2rem 3rem;
+  line-height: 0.1rem;
+  text-align: center;
+  background: #d0d0d0;
+}
+
+.oauth-divider span {
+  padding: 0 1rem;
+  color: #c3c3c3;
+  background: #fff;
+}
+
+.oauth-signup .oauth-action {
+  margin-bottom: 1.25rem;
+}
+
+.oauth-signup .oauth-action a {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+}
+
+.oauth-signup .oauth-action a:hover,
+.oauth-signup .oauth-action a:focus,
+.oauth-signup .oauth-action a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.oauth-signup .oauth-action a .oauth-text {
+  flex: 1;
+  font-weight: bold;
+  color: #fff;
+}
+
+.oauth-signup .oauth-action.oauth-google a {
+  height: 5rem;
+  background-color: #5085ec;
+  border: 0;
+}
+
+.oauth-signup .oauth-action.oauth-google a .oauth-google-icon {
+  background: #fff;
+  transform: scale(0.65);
+  border-radius: 0.5rem;
+  line-height: 4.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-google a .oauth-google-icon img {
+  margin: 1rem;
+  max-width: 2.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-google a:hover,
+.oauth-signup .oauth-action.oauth-google a:active {
+  background-color: #2265e7;
+}
+
+.oauth-signup .oauth-action.oauth-microsoft a {
+  height: 5rem;
+  background: #2f2f2f;
+  border: 0;
+}
+
+.oauth-signup .oauth-action.oauth-microsoft a .oauth-microsoft-icon {
+  transform: scale(0.65);
+  border-radius: 0.5rem;
+  line-height: 4.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-microsoft a .oauth-microsoft-icon img {
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 3.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-microsoft a:hover,
+.oauth-signup .oauth-action.oauth-microsoft a:active {
+  background-color: #161616;
+}
+
+.oauth-signup .oauth-action.oauth-facebook a {
+  height: 5rem;
+  background: #3b5998;
+  border: 0;
+}
+
+.oauth-signup .oauth-action.oauth-facebook a .oauth-facebook-icon {
+  background: #fff;
+  transform: scale(0.65);
+  border-radius: 0.5rem;
+  line-height: 4.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-facebook a .oauth-facebook-icon img {
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 3.5rem;
+}
+
+.oauth-signup .oauth-action.oauth-facebook a:hover,
+.oauth-signup .oauth-action.oauth-facebook a:active {
+  background-color: #2d4373;
+}
+
+.login-page .login__with-sso {
+  padding-top: 0.5rem;
+  font-weight: 500;
+}
+
+.login-page .login__with-sso a {
+  color: #0d8ecf !important;
+}
+
+.signup-disclaimer-box a {
+  color: #0d8ecf !important;
+}
+
+.login-page .login__with-sso a:hover {
+  color: #004466;
+}
+
+.peeky-placeholder-wrapper {
+  margin-bottom: 2rem;
+}
+
+.peeky-placeholder-wrapper label {
+  position: relative;
+  font-weight: normal;
+  display: block;
+  background: #f7f7f7;
+  border-radius: 0.5rem;
+  max-width: unset;
+  width: 100%;
+  overflow: hidden;
+  height: 5.1rem;
+  margin: 0;
+}
+
+.peeky-placeholder-wrapper label.rr-invalid {
+  animation: shake 500ms cubic-bezier(0.2, 1.3, 0.7, 1) both;
+  background: #fff1f1;
+  color: #b94a48;
+}
+
+.peeky-placeholder-wrapper label.rr-invalid input {
+  color: #b94a48;
+}
+
+.peeky-placeholder-wrapper label input {
+  box-sizing: border-box;
+  display: block;
+  padding: 1.5rem;
+  height: auto;
+  background: none;
+  border: none;
+  width: 100%;
+  box-shadow: none !important;
+  outline: none;
+  color: #4f4f4f;
+  font-size: 14px;
+}
+
+.peeky-placeholder-wrapper label input.peek-mode,
+.peeky-placeholder-wrapper label input:focus,
+.peeky-placeholder-wrapper label input:-webkit-autofill {
+  padding-top: 2.5rem;
+}
+
+.peeky-placeholder-wrapper label input::placeholder {
+  opacity: 1;
+  color: #999;
+}
+
+.peeky-placeholder-wrapper label input.peek-mode::placeholder,
+.peeky-placeholder-wrapper label input:focus::placeholder,
+.peeky-placeholder-wrapper label input:-webkit-autofill::placeholder {
+  color: #333;
+  opacity: 0;
+}
+
+.peeky-placeholder-wrapper label span {
+  color: #049cdb;
+  pointer-events: none;
+  position: absolute;
+  top: 30%;
+  left: 1.5rem;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.peeky-placeholder-wrapper label input.peek-mode + span,
+.peeky-placeholder-wrapper label input:focus + span,
+.peeky-placeholder-wrapper label input:-webkit-autofill + span {
+  opacity: 1;
+  position: absolute;
+  top: 0.5rem;
+  font-size: 10px;
+  color: #049cdb;
+}
+
+ul.error-messages {
+  list-style-type: none;
+  margin-top: 1.5rem;
+  padding: 0;
+  color: #b94a48;
+  display: none;
+}
+
+ul.error-messages.error-messages--for-peeky {
+  height: 0.75rem;
+  display: block !important;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#FormGroupRecaptcha ul.error-messages {
+  height: auto;
+}
+
+#FormGroupRecaptcha {
+  display: none;
+}
+
+ul.error-messages.error-messages--for-peeky.flash-over {
+  visibility: visible;
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+ul.error-messages > li {
+  user-select: none;
+}
+
+ul.error-messages > li::before {
+  content: "⚠";
+  margin-right: 5px;
+}
+
+.success-banner {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 0.5rem;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .form-box button[type="submit"] {
+    margin-top: 2rem;
+  }
+
+  .form-box .manual-signup {
+    padding-top: 3rem;
+    border-right: 1px solid #c0c0c0;
+    padding-right: 4rem;
+  }
+
+  .form-box .oauth-signup.oauth-signup--right-aligned {
+    padding-left: 4rem;
+    text-align: center;
+    margin-top: 11%;
+    position: relative;
+  }
+
+  .form-box .oauth-signup.oauth-signup--right-aligned .oauth-divider-horizontal {
+    display: none;
+  }
+
+  .form-box .oauth-signup.oauth-signup--right-aligned .oauth-divider-vertical-or {
+    position: absolute;
+    display: block;
+    left: -1rem;
+    top: calc(25% - 0.8rem);
+    z-index: 2;
+    background: #fff;
+    width: 2rem;
+    padding: 1rem 0;
+    color: #4f4f4f;
+    font-size: 1.4rem;
+  }
+
+  .login-page .login__with-sso {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-box {
+    padding: 2.4rem 2rem;
+  }
+}
