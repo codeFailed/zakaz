@@ -47,10 +47,13 @@ function sendJson(response, statusCode, payload) {
 }
 
 async function sendTelegramMessage(text) {
-  if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) return;
+  if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
+    console.error("Telegram is not configured: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is missing");
+    return false;
+  }
 
   try {
-    await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    const telegramResponse = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -58,13 +61,18 @@ async function sendTelegramMessage(text) {
         text,
       }),
     });
-  } catch {
-    // Telegram outages must not prevent the file download.
-  }
-}
 
-async function sendTelegramNotification() {
-  await sendTelegramMessage(`VPN update downloaded.\nTotal downloads: ${stats.totalDownloads}`);
+    const telegramPayload = await telegramResponse.json();
+    if (!telegramResponse.ok || !telegramPayload.ok) {
+      console.error("Telegram API rejected the message", telegramPayload);
+      return false;
+    }
+
+    return true;
+  } catch {
+    console.error("Telegram request failed");
+    return false;
+  }
 }
 
 function getClientIp(request) {
@@ -152,7 +160,7 @@ async function handleApi(request, response, requestUrl) {
       stats.totalDownloads += 1;
       stats.lastDownloadAt = new Date().toISOString();
       await saveStats();
-      void sendTelegramMessage(createDownloadNotification(request, requestUrl));
+      await sendTelegramMessage(createDownloadNotification(request, requestUrl));
 
       response.writeHead(200, {
         "Content-Type": "application/octet-stream",
